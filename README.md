@@ -1,2 +1,2 @@
 # learning
-Hub for small test projects etc.
+Hub for building small test projects, following tutorials, etc.
