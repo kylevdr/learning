@@ -5,19 +5,50 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>First Vue</title>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css"> -->
-    <!-- <link rel="stylesheet" href="./styles/main.css" type="text/css"> -->
+    <link rel="stylesheet" href="./firstvue.css" type="text/css">
   </head>
   <body>
-    <div id="app">
-      {{ message }}
+    <div id="app" v-bind:title="message">
+      <h1>Vue Testing</h1>
+      <p>Message: <span v-if="visible">{{ message }}</span></p>
+      <button v-on:click="visible = !visible">Toggle Message</button>
+      <button v-on:click="reverseMessage">Reverse Message</button>
+      <h2>List</h2>
+      <ol>
+        <li v-for="item in listItems">
+          {{ item.text }}
+        </li>
+      </ol>
+      New item: <input type="text" v-model="newItem" />
+      <button v-on:click="addNewItem">Add New Item</button>
+      <button v-on:click="removeItem">Remove Last Item</button>
     </div>
-    
+
     <script src="https://unpkg.com/vue"></script>
     <script type="text/javascript">
       var app = new Vue({
         el: '#app',
         data: {
-          message: 'Hello Vue!'
+          message: 'Hello Vue!',
+          visible: true,
+          listItems: [
+            { text: 'Item 1' },
+            { text: 'Item 2' },
+            { text: 'Item 3' }
+          ],
+          newItem: ''
+        },
+        methods: {
+          reverseMessage: function() {
+            this.message = this.message.split('').reverse().join('');
+          },
+          addNewItem: function() {
+            this.listItems.push({text: this.newItem});
+            this.newItem = '';
+          },
+          removeItem: function() {
+            this.listItems.pop();
+          }
         }
       });
     </script>
