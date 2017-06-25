@@ -1,24 +1,10 @@
-# README
+# Hello App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hello world application following the rails tutorial by Michael Hartl.
 
-Things you may want to cover:
+Available routes:
+- /hello
+- /goodbye
+- /hola
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+View live: https://kv-rails-hello-app.herokuapp.com/
